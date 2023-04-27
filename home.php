@@ -12,7 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
     <!-- Page content-->
     <div class="container">
-        <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1 class="my-5"><i class="fa-sharp fa-solid fa-user-secret"></i> Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
     </div>
     <!-- Bootstrap core JS-->
 <?php include 'footer.php' ?>

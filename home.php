@@ -45,16 +45,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
             // toon het bewerkingsformulier met de huidige gebruikersnaam
             echo "<form method='post'>
-            <input type='hidden' name='userId' value='".$user['id']."' />
-            <div class='form-group'>
-                <label for='username'>Username:</label>
-                <input type='text' class='form-control' id='username' name='username' value='".$user['username']."' />
-            </div>
-            <br>
-            <button type='submit'  name='update' class='btn btn-outline-success'>Save</button>
-            <br><br>
-        </form>";
+    <input type='hidden' name='userId' value='".$user['id']."' />
+    <div class='form-group'>
+        <label for='username'>Username:</label>
+        <input type='text' class='form-control' id='username' name='username' value='".$user['username']."' />
+    </div>
+    <br>
+    <button type='submit'  name='update' class='btn btn-outline-success'>Save</button>
+    <button type='button' class='btn btn-outline-danger' onclick='location.href=\"home.php\"'>Cancel</button>
+    <br><br>
+    </form>";
         }
+
         // Output the users in an HTML table using Bootstrap classes
         echo "<table  class='table shadow-lg'>
         <thead>

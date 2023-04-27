@@ -4,6 +4,7 @@ session_start();
 
 include 'header.php';
 include 'menu.php';
+include 'config.php';
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -15,12 +16,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <h1 class="my-5"><center><i class="fa-sharp fa-solid fa-user-secret"></i> Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.<br>
             <a type="button" class="btn btn-outline-primary" href="register.php">Add User</a></center></h1>
         <?php
-        /* Database credentials */
-        define('DB_SERVER', 'localhost');
-        define('DB_USERNAME', 'root');
-        define('DB_PASSWORD', '');
-        define('DB_NAME', 'crud');
-
         /* Attempt to connect to MySQL database */
         try{
             $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);

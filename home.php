@@ -12,7 +12,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
     <!-- Page content-->
     <div class="container">
-        <h1 class="my-5"><i class="fa-sharp fa-solid fa-user-secret"></i> Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+        <h1 class="my-5"><center><i class="fa-sharp fa-solid fa-user-secret"></i> Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.<br>
+            <a type="button" class="btn btn-outline-primary" href="register.php">Add User</a></center></h1>
         <?php
         /* Database credentials */
         define('DB_SERVER', 'localhost');

@@ -1,6 +1,7 @@
 <?php
 // Initialize the session
 session_start();
+
 include 'header.php';
 include 'menu.php';
 // Check if the user is logged in, if not then redirect him to login page

@@ -1,7 +1,9 @@
-<?php include 'header.php' ?>
-<!-- Responsive navbar-->
-<?php include 'menu.php' ?>
-<!-- Page content-->
+<?php
+// Initialize the session
+session_start();
+include 'header.php';
+include 'menu.php';
+?>
 <div class="container">
     <div class="text-center mt-5">
         <h1>PHP CRUD</h1>

@@ -6,13 +6,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <?php
+                // controleer of de URL overeenkomt met de huidige pagina en voeg 'active' toe aan de link
+                $currentPage = basename($_SERVER['PHP_SELF']);
+                $homeUrl = "home.php";
+                $loginUrl = "login.php";
+                $logoutUrl = "logout.php";
                 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-                    echo '<li class="nav-item"><a class="nav-link" aria-current="page" href="home.php">Home</a></li>';
-                   echo '<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>';
+                    $homeClass = ($currentPage == $homeUrl) ? "active" : "";
+                    $loginClass = ($currentPage == $loginUrl) ? "active" : "";
+                    echo '<li class="nav-item"><a class="nav-link '.$homeClass.'" aria-current="page" href="'.$homeUrl.'">Home</a></li>';
+                    echo '<li class="nav-item"><a class="nav-link '.$loginClass.'" href="'.$loginUrl.'">Login</a></li>';
                 }else{
+                    $homeClass = ($currentPage == $homeUrl) ? "active" : "";
+                    $logoutClass = ($currentPage == $logoutUrl) ? "active" : "";
                     echo '<li class="nav-item"><a class="nav-link" aria-current="page"><i class="fa-sharp fa-solid fa-user-secret"></i><b> ' . htmlspecialchars($_SESSION["username"]) . '</b></a></li>';
-                    echo '<li class="nav-item"><a class="nav-link" aria-current="page" href="home.php">Home</a></li>';
-                    echo '<li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>';
+                    echo '<li class="nav-item"><a class="nav-link '.$homeClass.'" aria-current="page" href="'.$homeUrl.'">Home</a></li>';
+                    echo '<li class="nav-item"><a class="nav-link '.$logoutClass.'" href="'.$logoutUrl.'">Logout</a></li>';
                 }
                 ?>
             </ul>

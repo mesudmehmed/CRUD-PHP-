@@ -86,6 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     unset($pdo);
 }
 ?>
+<br>
     <!-- Page content-->
     <div class="container">
     <div class="wrapper">

@@ -10824,3 +10824,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
